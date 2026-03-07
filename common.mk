@@ -73,6 +73,10 @@ PRODUCT_SOONG_NAMESPACES += \
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 PRODUCT_CHARACTERISTICS := nosdcard
 
+# Vendor service manager
+PRODUCT_PACKAGES += \
+    vndservicemanager
+
 # VINTF
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     hardware/xiaomi/vintf/xiaomi_framework_compatibility_matrix.xml \
