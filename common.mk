@@ -76,5 +76,11 @@ PRODUCT_CHARACTERISTICS := nosdcard
 # Virtualization
 $(call inherit-product, packages/modules/Virtualization/apex/product_packages.mk)
 
+# WiFi
+PRODUCT_PACKAGES += \
+    firmware_wlanmdsp.otaupdate_symlink \
+    firmware_WCNSS_qcom_cfg.ini_symlink \
+    firmware_wlan_mac.bin_symlink
+
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/xiaomi/sm4450-common/sm4450-common-vendor.mk)
