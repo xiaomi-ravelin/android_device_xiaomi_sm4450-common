@@ -73,6 +73,14 @@ PRODUCT_SOONG_NAMESPACES += \
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 PRODUCT_CHARACTERISTICS := nosdcard
 
+# VINTF
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
+    hardware/xiaomi/vintf/xiaomi_framework_compatibility_matrix.xml \
+    hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml
+DEVICE_MANIFEST_FILE := \
+    $(LOCAL_PATH)/configs/vintf/manifest_ravelin.xml
+DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix_aidl.xml
+
 # Virtualization
 $(call inherit-product, packages/modules/Virtualization/apex/product_packages.mk)
 
