@@ -109,6 +109,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
 
+# IPACM
+PRODUCT_PACKAGES += \
+    ipacm \
+    IPACM_cfg.xml \
+    IPACM_Filter_cfg.xml
+
 # Kernel
 PRODUCT_COPY_FILES += \
     kernel/xiaomi/sm4450/modules.systemdlkm_blocklist.msm.parrot:$(TARGET_COPY_OUT_VENDOR_DLKM)/lib/modules/system_dlkm.modules.blocklist
