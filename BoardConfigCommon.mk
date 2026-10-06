@@ -35,6 +35,9 @@ BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_USES_QCOM_MERGE_DTBS_SCRIPT := true
 TARGET_NEEDS_DTBOIMAGE := true
 
+# Filesystem
+TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/configs/config.fs
+
 # Kernel
 BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \
