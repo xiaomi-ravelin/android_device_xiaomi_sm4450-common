@@ -184,7 +184,14 @@ TARGET_USES_VULKAN := true
 PRODUCT_PACKAGES += \
     fstab.qcom \
     fstab.qcom.vendor_ramdisk \
-    init.qcom.recovery.rc
+    init.kernel.post_boot.sh \
+    init.qcom.post_boot.sh \
+    init.qcom.rc \
+    init.qcom.recovery.rc \
+    init.target.rc \
+    system_dlkm_modprobe.sh \
+    ueventd.qcom.rc \
+    vendor.qti.qccsyshal_aidl-service.rc
 
 # IR
 PRODUCT_COPY_FILES += \
