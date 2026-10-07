@@ -94,6 +94,12 @@ BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 0x06000000
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := parrot
 
+# Properties
+TARGET_ODM_PROP += $(COMMON_PATH)/configs/props/odm.prop
+TARGET_PRODUCT_PROP += $(COMMON_PATH)/configs/props/product.prop
+TARGET_SYSTEM_EXT_PROP += $(COMMON_PATH)/configs/props/system_ext.prop
+TARGET_VENDOR_PROP += $(COMMON_PATH)/configs/props/vendor.prop
+
 # Recovery
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
 BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := true
