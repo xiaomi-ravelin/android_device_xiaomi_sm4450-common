@@ -422,6 +422,8 @@ service iop /system/vendor/bin/iop
     socket iop seqpacket 0666 root system
 
 service vendor.ssr_setup /system/vendor/bin/ssr_setup
+    user system
+    group system
     oneshot
     disabled
 
