@@ -197,6 +197,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
 
+PRODUCT_PACKAGES += \
+    android.hardware.ir-service.lineage
+
 # IPACM
 PRODUCT_PACKAGES += \
     ipacm \
