@@ -64,6 +64,8 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/libvideooptfeature.so',
     ): blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
+    'system_ext/priv-app/ims/ims.apk': blob_fixup()
+        .apktool_patch('blob-patches/ims.patch'),
     'vendor/etc/media_codecs_ravelin.xml': blob_fixup()
         .regex_replace('.*media_codecs_(google_audio|google_c2|google_telephony|google_video|vendor_audio).*\n', ''),
     'vendor/etc/seccomp_policy/gnss@2.0-qsap-location.policy': blob_fixup()
