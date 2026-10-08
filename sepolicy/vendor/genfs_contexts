@@ -1,0 +1,27 @@
+# Audio
+genfscon sysfs /devices/platform/soc/soc:spf_core_platform/soc:spf_core_platform:lpass-cdc/wcd937x-codec/extcon u:object_r:sysfs_extcon:s0
+
+# Storage
+genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:0/block/sda/queue/discard_max_bytes u:object_r:vendor_sysfs_sd:s0
+
+# Swap
+genfscon sysfs /kernel/mm/swap/vma_ra_enabled                                    u:object_r:vendor_sysfs_swap:s0
+
+# Wakeup
+genfscon sysfs /devices/platform/soc/9c0000.qcom,qupv3_0_geni_se/984000.i2c/i2c-1/1-0058/wakeup u:object_r:sysfs_wakeup:s0
+
+# Firmware
+genfscon proc /sys/kernel/firmware_config u:object_r:proc_firmware_config:s0
+
+# Fingerprint
+genfscon sysfs /devices/platform/soc/soc:fpc1020                                 u:object_r:vendor_sysfs_fingerprint:s0
+genfscon sysfs /devices/platform/soc/soc:fpc1020/wakeup_enable                   u:object_r:vendor_sysfs_fingerprint:s0
+genfscon sysfs /devices/platform/soc/soc:fpc1020/wakeup                          u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:goodix_fp/wakeup                        u:object_r:sysfs_wakeup:s0
+
+# Touchscreen
+genfscon proc /touchscreen                                                       u:object_r:vendor_proc_touchscreen:s0
+genfscon sysfs /devices/virtual/touch/touch_dev                                  u:object_r:vendor_sysfs_touch:s0
+
+# LiveDisplay
+genfscon sysfs /devices/platform/soc/9c0000.qcom,qupv3_0_geni_se/984000.i2c/i2c-1/1-0036/hbm u:object_r:sysfs_livedisplay_tuneable:s0

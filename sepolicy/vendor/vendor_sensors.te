@@ -1,0 +1,2 @@
+# SAR sensor follows the charging state
+r_dir_file(vendor_sensors, vendor_sysfs_battery_supply)

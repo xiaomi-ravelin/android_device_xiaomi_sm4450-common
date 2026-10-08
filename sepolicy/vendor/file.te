@@ -1,0 +1,15 @@
+# Camera
+type camera_persist_file, file_type, mlstrustedobject, vendor_persist_type;
+
+# Swap
+type vendor_sysfs_swap, fs_type, sysfs_type;
+
+# Thermal
+type mi_thermald_data_file, file_type, data_file_type;
+
+# Fingerprint
+type vendor_fingerprint_data_file, file_type, data_file_type;
+type vendor_fingerprint_device, dev_type;
+
+# Touchscreen
+type vendor_proc_touchscreen, fs_type, proc_type;

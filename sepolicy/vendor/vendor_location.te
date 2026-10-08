@@ -1,0 +1,12 @@
+allow vendor_location self:qipcrtr_socket create_socket_perms_no_ioctl;
+
+binder_call(vendor_location, vendor_qccvendor)
+vndbinder_use(vendor_location)
+
+# loc_launcher spawns xtra-daemon
+domain_auto_trans(vendor_location, vendor_location_xtra_daemon_exec, vendor_location_xtra_daemon)
+allow vendor_location_xtra_daemon vendor_location:fd use;
+
+# loc_launcher spawns lowi-server
+domain_auto_trans(vendor_location, vendor_location_lowi_server_exec, vendor_location_lowi_server)
+allow vendor_location_lowi_server vendor_location:fd use;

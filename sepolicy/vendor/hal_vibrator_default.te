@@ -1,0 +1,2 @@
+hal_client_domain(hal_vibrator_default, hal_audio)
+wakelock_use(hal_vibrator_default)

@@ -1,0 +1,28 @@
+type mi_thermald, domain;
+type mi_thermald_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(mi_thermald)
+
+allow mi_thermald self:capability { chown fowner };
+
+set_prop(mi_thermald, vendor_thermal_prop)
+
+# Sensors, cooling devices and /sys/class/thermal/thermal_message
+allow mi_thermald sysfs:dir r_dir_perms;
+allow mi_thermald sysfs_thermal:dir r_dir_perms;
+allow mi_thermald sysfs_thermal:file rw_file_perms;
+allow mi_thermald sysfs_thermal:lnk_file read;
+
+# CPU limits and hotplug
+allow mi_thermald sysfs_devices_system_cpu:dir r_dir_perms;
+allow mi_thermald sysfs_devices_system_cpu:file rw_file_perms;
+
+# Battery, charger and backlight inputs
+r_dir_file(mi_thermald, sysfs_battery_supply)
+r_dir_file(mi_thermald, vendor_sysfs_battery_supply)
+r_dir_file(mi_thermald, vendor_sysfs_graphics)
+allow mi_thermald sysfs_leds:dir r_dir_perms;
+
+# Decrypted configs and dumps
+allow mi_thermald mi_thermald_data_file:dir create_dir_perms;
+allow mi_thermald mi_thermald_data_file:file create_file_perms;
