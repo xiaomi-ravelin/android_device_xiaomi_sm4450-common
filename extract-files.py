@@ -66,6 +66,9 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
     'system_ext/priv-app/ims/ims.apk': blob_fixup()
         .apktool_patch('blob-patches/ims.patch'),
+    'vendor/lib64/camx.provider-impl.so': blob_fixup()
+        # CameraProvider::getConcurrentCameraIds() fails when the HAL has no concurrent combinations
+        .sig_replace('b7 43 5d b8 96 00 80 52 80 3e 00 35', 'b7 43 5d b8 16 00 80 52'),
     'vendor/etc/media_codecs_ravelin.xml': blob_fixup()
         .regex_replace('.*media_codecs_(google_audio|google_c2|google_telephony|google_video|vendor_audio).*\n', ''),
     'vendor/etc/seccomp_policy/gnss@2.0-qsap-location.policy': blob_fixup()
