@@ -79,9 +79,4 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE
            <instance>default</instance>
        </interface>
     </hal>
-    <hal format="aidl">
-        <name>android.hardware.drm</name>
-        <version>1</version>
-        <fqname>IDrmFactory/wfdhdcp</fqname>
-    </hal>
 </manifest>
