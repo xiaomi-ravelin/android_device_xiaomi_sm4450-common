@@ -66,6 +66,9 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
     'system_ext/priv-app/ims/ims.apk': blob_fixup()
         .apktool_patch('blob-patches/ims.patch'),
+    'vendor/lib64/libxiaomi_qcril.so': blob_fixup()
+        # xiaomi_modem_check_odm_white_list() restarts qcril on devices missing from its ODM whitelist
+        .sig_replace('ff 43 01 d1 fd 7b 01 a9 f8 5f 02 a9 f6 57 03 a9 f4 4f 04 a9 fd 43 00 91 00 10 80 52 50 a9 01 94', 'c0 03 5f d6'),
     'vendor/lib64/camx.provider-impl.so': blob_fixup()
         # CameraProvider::getConcurrentCameraIds() fails when the HAL has no concurrent combinations
         .sig_replace('b7 43 5d b8 96 00 80 52 80 3e 00 35', 'b7 43 5d b8 16 00 80 52'),
