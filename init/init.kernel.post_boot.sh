@@ -42,7 +42,7 @@ function configure_zram_parameters() {
 	if [ $RamSizeGB -le 2 ]; then
 		let zRamSizeMB="( $RamSizeGB * 1024 ) * 3 / 4"
 	else
-		let zRamSizeMB="( $RamSizeGB * 1024 ) / 2"
+		let zRamSizeMB="( $RamSizeGB * 1024 ) * 3 / 4"
 	fi
 
 	if [ $zRamSizeMB -gt 4096 ]; then
@@ -51,9 +51,7 @@ function configure_zram_parameters() {
 
 	# And enable lz4 zram compression for Go targets.
 	low_ram=`getprop ro.config.low_ram`
-	if [ "$low_ram" == "true" ]; then
-		echo lz4 > /sys/block/zram0/comp_algorithm
-	fi
+	echo lz4 > /sys/block/zram0/comp_algorithm
 
 	if [ -f /sys/block/zram0/disksize ]; then
 		if [ -f /sys/block/zram0/use_dedup ]; then
@@ -170,7 +168,7 @@ function configure_memory_parameters() {
 	fi
 	# Disable wsf for all targets beacause we are using efk.
 	# wsf Range : 1..1000 So set to bare minimum value 1.
-	echo 1 > /proc/sys/vm/watermark_scale_factor
+	echo 60 > /proc/sys/vm/watermark_scale_factor
 
 	#Set per-app max kgsl reclaim limit and per shrinker call limit
 	if [ -f /sys/class/kgsl/kgsl/page_reclaim_per_call ]; then

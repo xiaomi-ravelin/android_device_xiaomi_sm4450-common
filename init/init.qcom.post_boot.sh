@@ -821,7 +821,6 @@ else
 
     # Disable wsf for all targets beacause we are using efk.
     # wsf Range : 1..1000 So set to bare minimum value 1.
-    echo 1 > /proc/sys/vm/watermark_scale_factor
 
     configure_zram_parameters
 
@@ -4895,7 +4894,6 @@ case "$target" in
 
 	# Disable wsf, beacause we are using efk.
 	# wsf Range : 1..1000 So set to bare minimum value 1.
-        echo 1 > /proc/sys/vm/watermark_scale_factor
 
         echo 0-3 > /dev/cpuset/background/cpus
         echo 0-3 > /dev/cpuset/system-background/cpus
@@ -5071,7 +5069,6 @@ case "$target" in
 
 	# Disable wsf, beacause we are using efk.
 	# wsf Range : 1..1000 So set to bare minimum value 1.
-        echo 1 > /proc/sys/vm/watermark_scale_factor
 
         echo 0-3 > /dev/cpuset/background/cpus
         echo 0-3 > /dev/cpuset/system-background/cpus
