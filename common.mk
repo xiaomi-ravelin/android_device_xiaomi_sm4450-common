@@ -35,6 +35,9 @@ BOARD_SHIPPING_API_LEVEL := 202404
 PRODUCT_SHIPPING_API_LEVEL := 35
 
 # Audio
+# Effect chains distort the software A2DP output
+TARGET_EXCLUDES_AUDIOFX := true
+
 PRODUCT_PACKAGES += \
     audio.bluetooth.default \
     audio.r_submix.default \
