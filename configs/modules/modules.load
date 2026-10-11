@@ -229,3 +229,4 @@ tz_log_dlkm.ko
 msm_video.ko
 qseecom_dlkm.ko
 msm_kgsl.ko
+mi_thermal_interface.ko
