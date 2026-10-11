@@ -69,6 +69,10 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/libxiaomi_qcril.so': blob_fixup()
         # xiaomi_modem_check_odm_white_list() restarts qcril on devices missing from its ODM whitelist
         .sig_replace('ff 43 01 d1 fd 7b 01 a9 f8 5f 02 a9 f6 57 03 a9 f4 4f 04 a9 fd 43 00 91 00 10 80 52 50 a9 01 94', 'c0 03 5f d6'),
+    'vendor/lib64/qcrilNr_aidl_IRadioNetwork.so': blob_fixup()
+        # qcril reports NR CA as private RIL technology 30, which utils::convert(RIL_RadioTechnology) doesn't know;
+        # map unknown technologies to NR (20) instead of UNKNOWN so the data RAT doesn't drop out during NR CA
+        .sig_replace('f2 0a 00 94 e8 03 1f 2a 04 00 00 14', 'f2 0a 00 94 88 02 80 52 04 00 00 14'),
     'vendor/lib64/camx.provider-impl.so': blob_fixup()
         # CameraProvider::getConcurrentCameraIds() fails when the HAL has no concurrent combinations
         .sig_replace('b7 43 5d b8 96 00 80 52 80 3e 00 35', 'b7 43 5d b8 16 00 80 52'),
