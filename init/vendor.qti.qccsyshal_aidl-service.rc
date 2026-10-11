@@ -48,6 +48,3 @@ service qccsyshal_aidl-service /system_ext/bin/qccsyshal_aidl-service
     user system
     group misc system
     interface aidl vendor.qti.qccsyshal_aidl
-
-on property:hwservicemanager.ready=true
-    stop qccsyshal_aidl-service
