@@ -779,6 +779,12 @@ vendor/lib64/libqrtr.so
 vendor/lib64/libqsocket.so
 vendor/lib64/libsmemlog.so
 
+# QMS
+vendor/bin/qms
+vendor/etc/init/qms.rc
+vendor/etc/seccomp_policy/qms.policy
+vendor/etc/vintf/manifest/qms-saidl.xml
+
 # QSEECOM
 vendor/bin/hw/vendor.qti.hardware.qseecom@1.0-service
 vendor/bin/qseecomd
