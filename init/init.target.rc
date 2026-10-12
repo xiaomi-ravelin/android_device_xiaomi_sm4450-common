@@ -85,6 +85,8 @@ on post-fs-data
 on early-boot
     start vendor.sensors
     verity_update_state
+    # LiveDisplay adaptive backlight (panel CABC), before the HAL starts with class hal
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/cabc
 
 on boot
     write /dev/cpuset/audio-app/cpus 1-2
