@@ -146,6 +146,11 @@ service vendor.per_proxy /vendor/bin/pm-proxy
 #    disabled
 
 
+on property:sys.boot_completed=1
+    # Charger input suspend (LineageOS Health charging control); the node appears once the ADSP charger is up
+    chown system system /sys/class/qcom-battery/input_suspend
+    chmod 0664 /sys/class/qcom-battery/input_suspend
+
 on property:init.svc.vendor.per_mgr=running
     start vendor.per_proxy
 
